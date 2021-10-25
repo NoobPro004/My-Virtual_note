@@ -1,3 +1,5 @@
+// const { Socket } = require("engine.io");
+
 let canvas=document.querySelector("canvas");
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
@@ -42,20 +44,28 @@ tool.lineWidth=penWidth;
 
 canvas.addEventListener("mousedown",(e)=>{
     mouseDown=true;
-   beginPath({
+//    beginPath({
+//        x:e.clientX,
+//        y:e.clientY
+//    })
+let data={
        x:e.clientX,
-       y:e.clientY
-   })
+       y:e.clientY,
+}
+socket.emit("beginPath",data);
 })
 
 canvas.addEventListener("mousemove",(e)=>{
+    
     if(mouseDown){
-        drawStroke({
+        let data={
             x:e.clientX,
             y:e.clientY,
             color : eraserFlag ? eraserColor : penColor,
             width : eraserWidth ? eraserWidth : penWidth,
-        })
+        }
+        
+        socket.emit("drawStroke",data);
     }
 })
 
@@ -75,7 +85,7 @@ undo.addEventListener("click",(e)=>{
         trackValue:track,
         undroRedoTracker
     }
-    undoredoCanvas(trackObj);
+    socket.emit("redoUndo",trackObj);
 
 })
 
@@ -85,7 +95,8 @@ redo.addEventListener("click",(e)=>{
         trackValue:track,
         undroRedoTracker
     }
-    undoredoCanvas(trackObj);
+    socket.emit("redoUndo",trackObj);
+
 })
 
 function undoredoCanvas(trackObj){
@@ -150,4 +161,18 @@ download.addEventListener("click",(e)=>{
     a.href=url;
     a.download="board.jpg";
     a.click();
+})
+
+socket.on("beginPath",(data)=>{
+    //  data from server
+    beginPath(data);
+})
+
+socket.on("drawStroke",(data)=>{
+    drawStroke(data);
+})
+
+
+socket.on("redoUndo",(data)=>{
+    undoredoCanvas(data);
 })
