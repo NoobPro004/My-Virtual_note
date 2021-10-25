@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.options-cont{
+    height:4rem;
+    width: 3.5rem;
+    background-color: #ced6e0;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.tool-cont{
+    display: flex;
+    height:5rem;
+    width: 55vw;
+    background-color: #ced6e0;
+    justify-content: space-around;
+    position: absolute;
+    top: 2rem;
+    left: 25vw;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.tool-cont >*{
+    display: block;
+    width: 4rem;
+}
+
+.pencil-tool-cont{
+    height:5rem;
+    width: 8rem;
+    background-color: lightgreen;
+    position: absolute;
+    top:7rem;
+    left:25vw;
+}
+
+
+.pencil-width-cont{
+    
+}
