@@ -12,14 +12,14 @@
     <div class="options-cont">
         <i class="fas fa-bars"></i>
     </div>
-    <div class="tool-cont">
-        <img src="Icons/Pencil.svg">
-        <img src="Icons/Eraser.svg">
-        <img src="Icons/Download.svg">
-        <img src="Icons/Upload.svg">
-        <img src="Icons/StickyNote.svg">
-        <img src="Icons/Redo.svg">
-        <img src="Icons/Undo.svg">
+    <div class="tool-cont scale-tools">
+        <img src="Icons/Pencil.svg" class="pencil">
+        <img src="Icons/Eraser.svg" class="eraser">
+        <img src="Icons/Download.svg" class="download">
+        <img src="Icons/Upload.svg" class="upload">
+        <img src="Icons/StickyNote.svg" class="sticky">
+        <img src="Icons/Redo.svg" class="redo">
+        <img src="Icons/Undo.svg" class="undo">
     </div>
 
     <div class="pencil-tool-cont">
@@ -33,7 +33,19 @@
         </div>
     </div>
 
-    <div class="eraser-tool"></div>
+    <div class="eraser-tool-cont">
+        <input type="range" min="2" max="10" value="3">
+    </div>
+
+    <div class="sticky-cont">
+        <div class="header-cont">
+            <div class="minimize"></div>
+            <div class="remove"></div>
+        </div>
+        <div class="note-cont">
+            <textarea></textarea>
+        </div>
+    </div>
     <script src="/tools.js"></script>
 </body>
 </html>
