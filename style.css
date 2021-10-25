@@ -5,6 +5,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 
 .options-cont{
@@ -175,5 +176,5 @@ textarea{
 img{
     height: 100%;
     width: 100%;
-    
+
 }
