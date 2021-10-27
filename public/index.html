@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My-Note</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="Icons/favicon.ico" type="image/gif" sizes="16x16">
 </head>
+
 <body>
     <div class="options-cont">
         <i class="fas fa-bars"></i>
     </div>
     <div class="tool-cont scale-tools">
-        <img src="Icons/Pencil.svg" class="pencil">
-        <img src="Icons/Eraser.svg" class="eraser">
-        <img src="Icons/Download.svg" class="download">
-        <img src="Icons/Upload.svg" class="upload">
-        <img src="Icons/StickyNote.svg" class="sticky">
-        <img src="Icons/Redo.svg" class="redo">
-        <img src="Icons/Undo.svg" class="undo">
+        <img src="Icons/Pencil.svg" class="pencil" />
+        <img src="Icons/Eraser.svg" class="eraser" />
+        <img src="Icons/Download.svg" class="download" />
+        <img src="Icons/Upload.svg" class="upload" />
+        <img src="Icons/StickyNote.svg" class="sticky" />
+        <img src="Icons/Redo.svg" class="redo" />
+        <img src="Icons/Undo.svg" class="undo" />
     </div>
 
     <div class="pencil-tool-cont">
         <div class="pencil-width-cont">
-            <input type="range" min="2" max="10" value="3" class="pencil-width">
+            <input type="range" min="2" max="10" value="3" class="pencil-width" />
         </div>
         <div class="pencil-color-cont">
             <div class="black pencil-color"></div>
@@ -34,14 +37,15 @@
     </div>
 
     <div class="eraser-tool-cont">
-        <input type="range" min="2" max="10" value="3" class="eraser-width">
+        <input type="range" min="2" max="10" value="3" class="eraser-width" />
     </div>
     <canvas></canvas>
     <script src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous"></script>
     <script>
-        let socket=io.connect("https://my-virtual-note.herokuapp.com");
+        let socket = io.connect("https://my-virtual-note.herokuapp.com");
     </script>
     <script src="tools.js"></script>
     <script src="canvas.js"></script>
 </body>
+
 </html>
